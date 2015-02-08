@@ -14,7 +14,7 @@
         android:layout_alignRight="@+id/txtNumeroContacto"
         android:layout_below="@+id/txtNumeroContacto"
         android:onClick="RegistrarContacto"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@android:drawable/ic_menu_save" />
 
 
     <EditText
