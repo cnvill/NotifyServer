@@ -27,7 +27,6 @@ public class NewContact extends Activity
         manager= new DataBaseManager(this);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -59,8 +58,8 @@ public class NewContact extends Activity
         }
 
         manager.insertar(txtNombre.getText().toString(), txtTelefono.getText().toString());
-        Intent nuevo=new Intent(this, MainActivity.class);
-        startActivity(nuevo);
+		Intent intent= getIntent();
+		setResult(1, intent);
         finish();
     }
 }

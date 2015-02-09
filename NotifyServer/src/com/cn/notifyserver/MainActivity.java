@@ -98,6 +98,16 @@ public class MainActivity extends Activity
 
     }
 
+	@Override
+	public void onRestart()
+	{
+		// TODO: Implement this method
+		super.onRestart();
+	}
+
+	
+	
+
     public void BuscarContacto(View v){
         try {
             new BuscarTask().execute();
@@ -110,9 +120,18 @@ public class MainActivity extends Activity
 
     public void NuevoContacto(View v){
         Intent nuevo=new Intent(this, NewContact.class);
-        startActivity(nuevo);
+        startActivityForResult(nuevo, 2);
     }
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		// TODO: Implement this method
+		super.onActivityResult(requestCode, resultCode, data);
+		adapter.changeCursor(manager.buscarContacto(txtBuscar.getText().toString()));
+	}
+	
+	
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
