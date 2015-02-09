@@ -95,19 +95,8 @@ public class MainActivity extends Activity
                 dlConfirmacion.show();
             }
         });
-
     }
-
-	@Override
-	public void onRestart()
-	{
-		// TODO: Implement this method
-		super.onRestart();
-	}
-
 	
-	
-
     public void BuscarContacto(View v){
         try {
             new BuscarTask().execute();
