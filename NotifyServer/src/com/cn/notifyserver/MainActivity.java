@@ -210,7 +210,7 @@ public class MainActivity extends Activity
             smsRespuesta = cgeneral.readSMS();
             String[] respuesta = smsRespuesta.split("\\|");
             if(respuesta.length == 3){
-                numeroRetorno =respuesta[0];
+              	numeroRetorno =respuesta[0];
                 latitud = respuesta[1];
                 longitud = respuesta[2];
                 if(numeroEnvio.trim().equalsIgnoreCase(numeroRetorno.trim())) {
@@ -225,17 +225,14 @@ public class MainActivity extends Activity
                     if (isIntentSafe)
                         startActivity(mapIntent);
 
-                }
-                else
+               }
+               else
                   Toast.makeText(getApplicationContext(), "La respuesta no es del cliente solicitado", Toast.LENGTH_SHORT).show();
-            }
+           }
             else
               Toast.makeText(getApplicationContext(), ":( Se excedio el tiempo de respuesta no se puedo recuperar la posición ", Toast.LENGTH_SHORT).show();
 
         }
     }
     
-    private void finish(View v){
-        finish();
-    }
 }
