@@ -56,10 +56,16 @@ public class NewContact extends Activity
             Toast.makeText(getApplicationContext(), "Ingrese el número", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        manager.insertar(txtNombre.getText().toString(), txtTelefono.getText().toString());
-		Intent intent= getIntent();
-		setResult(1, intent);
-        finish();
+		
+		if(!manager.ContactoExiste(txtTelefono.getText().toString())){
+			manager.insertar(txtNombre.getText().toString(), txtTelefono.getText().toString());
+			Intent intent= getIntent();
+			setResult(1, intent);
+			finish();	
+		}
+		else
+			Toast.makeText(getApplicationContext(), "Ya existe un contacto con el mismo Nº de telefono", Toast.LENGTH_SHORT).show();
+		
+        
     }
 }

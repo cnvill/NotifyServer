@@ -78,8 +78,17 @@ public class DataBaseManager {
     public Cursor buscarContactoId(String id){
 
         String[] columnas= new String[]{ ptId, ptName, ptTelefono, ptEstado};
-
         return db.query(tableName, columnas, ptId+"=?", new String[]{id}, null, null, null);
-
     }
+	
+	public boolean ContactoExiste(String nroTelefono){
+		boolean respt=false;
+        String[] columnas= new String[]{ ptId, ptName, ptTelefono, ptEstado};
+        Cursor c= db.query(tableName, columnas, ptTelefono+"=?", new String[]{ nroTelefono }, null, null, null);
+  		if(c.moveToFirst())
+			respt=true;
+			
+		return respt;	
+	}
+	
 }
