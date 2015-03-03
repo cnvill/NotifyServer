@@ -4,5 +4,5 @@
     <string name="hello">Hello World, MainActivity!</string>
     <string name="app_name">NotifyServer</string>
 	<string name="title_newcontact">Nuevo Contacto</string>
-	
+	<string name="title_configmain">Configuración NotifyMe</string>
 </resources>
