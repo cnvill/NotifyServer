@@ -19,14 +19,37 @@ import com.cn.notifyserver.Class.GeneralCn;
 import java.util.List;
 public class ConfigMain extends Activity
 {
-	
+	static boolean isServerClient=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.configmain);
+		getActionBar().hide();
     }
-
-
+	
+	public void onRadioButtonClicked(View view){
+		boolean checked=((RadioButton)view).isChecked();
+		switch(view.getId()){
+	 		case R.id.rbtnServidor:
+				if(checked)
+					isServerClient=true;
+				break;
+			case R.id.rbtnCliente:
+				if(checked)
+					isServerClient=false;
+				break;
+		}
+	}
+	
+	public void OnSaveOption(View view){
+	if(isServerClient){
+		this.finish();
+			Intent mainIntent= new Intent(this, MainActivity.class);
+			startActivity(mainIntent);
+		}
+		
+	}
+	
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

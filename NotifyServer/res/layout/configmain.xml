@@ -2,5 +2,58 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    
+	<ImageView
+		android:id="@+id/imglogo"
+		android:layout_width="wrap_content"
+		android:layout_height="200dp"
+		android:background="@drawable/ic_launcher"
+		android:layout_gravity="center"
+		/>
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:textColor="#4B8AD1"
+		android:typeface="monospace"
+		android:text="@string/hello"
+		android:gravity="center"
+		android:textSize="25dp"
+		/>
+	<RadioGroup 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:textSize="24dp"
+		>
+		
+		<RadioButton android:id="@+id/rbtnServidor"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/servidor"
+			android:textColor="#4B8AD1"
+			android:onClick="onRadioButtonClicked"
+			android:textSize="23dp"
+		/>
+		<RadioButton android:id="@+id/rbtnCliente"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#4B8AD1"
+			android:text="@string/cliente"
+			android:onClick="onRadioButtonClicked"
+			android:checked="true"
+			android:textSize="23dp"
+		/>
+	</RadioGroup>
+	
+	<ImageButton
+		android:id="@+id/btnsiguiente"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/siguiente"
+		android:layout_gravity="center"
+		android:textSize="25dp"
+		android:src="@drawable/next"
+		
+		android:onClick="OnSaveOption"
+		/>
 </LinearLayout>

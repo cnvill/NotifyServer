@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">NotifyServer</string>
+    <string name="hello">NotifyMe</string>
+    <string name="app_name">NotifyMe</string>
 	<string name="title_newcontact">Nuevo Contacto</string>
 	<string name="title_configmain">Configuración NotifyMe</string>
+	<string name="servidor">Servidor</string>
+	<string name="cliente">Cliente</string>
+	<string name="siguiente">Siguiente</string>
 </resources>
